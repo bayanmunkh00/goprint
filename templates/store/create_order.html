@@ -1,0 +1,99 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Захиалга үүсгэх{% endblock title %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Захиалга</a></li>
+                            <li class="active">Үүсгэх</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Захиалга үүсгэх</strong>
+            </div>
+            <div class="card-body">
+                <!-- Credit Card -->
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <form action="#" method="post" novalidate="novalidate">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="company" class="control-label mb-1">Компани</label>
+                                {{ form.company }}
+                            </div>
+                            <div class="form-group">
+                                <label for="customer" class="control-label mb-1">Захиалагч</label>
+                                {{ form.customer }}
+                            </div>
+                            <div class="form-group">
+                                <label for="Утас" class="control-label mb-1">Утас</label>
+                                {{ form.phone }}
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label mb-1">Мэйл хаяг</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group">
+                                <label for="product" class="control-label mb-1">Product</label>
+                                {{ form.product }}
+                            </div>
+                            <div class="form-group">
+                                <label for="size" class="control-label mb-1">Хэмжээ</label>
+                                {{ form.size }}
+                            </div>
+                            <div class="form-group">
+                                <label for="papergramm" class="control-label mb-1">Цаасны грамм</label>
+                                {{ form.papergramm }}
+                            </div>
+                            <div class="form-group">
+                                <label for="jobs" class="control-label mb-1">Jobs</label>
+                                {{ form.jobs }}
+                            </div>
+                            <div class="form-group">
+                                <label for="count" class="control-label mb-1">Тоо ширхэг</label>
+                                {{ form.count }}
+                            </div>
+                            <div class="form-group">
+                                <label for="price" class="control-label mb-1">Үнэ</label>
+                                {{ form.price }}
+                            </div>
+                            <div>
+                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <span id="payment-button-amount">Захиалга үүсгэх</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- .card -->
+
+    </div><!--/.col-->
+</div>
+{% endblock content %}
